@@ -1,0 +1,290 @@
+{
+	"info": {
+		"_postman_id": "1a22864e-b3db-4f28-876a-e3774686a7be",
+		"name": "Api Invoice",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14953806"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "susanna40@example.org",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "susanna40@example.org123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{admin_domain}}/auth/login",
+							"host": [
+								"{{admin_domain}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE2OTIwNzA1MDksImV4cCI6MTY5MjA3NDEwOSwibmJmIjoxNjkyMDcwNTA5LCJqdGkiOiJ1VDZRMWplZkJkdnJJVWM1Iiwic3ViIjoiMTAwMDAwMDEiLCJwcnYiOiJjOGVlMWZjODllNzc1ZWM0YzczODY2N2U1YmUxN2E1OTBiNmQ0MGZjIn0.fk74MN-itTl5SLMqW4acqok5hpalDHpoHR_OqMNfYQQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{admin_domain}}/auth/logout",
+							"host": [
+								"{{admin_domain}}"
+							],
+							"path": [
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE2OTIxMTU4ODEsImV4cCI6MTY5MjExOTQ4MSwibmJmIjoxNjkyMTE1ODgxLCJqdGkiOiJFdDR3TVRLcFhqM052SFVxIiwic3ViIjoiMTAwMDAwMDEiLCJwcnYiOiJjOGVlMWZjODllNzc1ZWM0YzczODY2N2U1YmUxN2E1OTBiNmQ0MGZjIn0.bR42SPzf1HfRo8-2cKq3QUibWPHLCSemvS_uv4qrHx4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"category_name\": \"Pear\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{admin_domain}}/category/store",
+							"host": [
+								"{{admin_domain}}"
+							],
+							"path": [
+								"category",
+								"store"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Fruit Item",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE2OTIwODI5OTcsImV4cCI6MTY5MjA4NjU5NywibmJmIjoxNjkyMDgyOTk3LCJqdGkiOiJiUzVuaWRmOTNRU3dEOFJUIiwic3ViIjoiMTAwMDAwMDEiLCJwcnYiOiJjOGVlMWZjODllNzc1ZWM0YzczODY2N2U1YmUxN2E1OTBiNmQ0MGZjIn0.H0xlfkqa9YmOfjSTiJ5jl45VbuUS5fKYL_P_kHiAeFQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"fruit_item_name\": \"Vietnam small apple\",\n  \"unit\": \"pcs\",\n  \"price\": \"1.2\",\n  \"category_id\": 10000001\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{admin_domain}}/fruit-item/store",
+							"host": [
+								"{{admin_domain}}"
+							],
+							"path": [
+								"fruit-item",
+								"store"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Invoice",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE2OTI0MTg2MzIsImV4cCI6MTY5MjQyMjIzMiwibmJmIjoxNjkyNDE4NjMyLCJqdGkiOiJUWW5rS1dXdzdHUm9SUE5JIiwic3ViIjoiMTAwMDAwMDEiLCJwcnYiOiJjOGVlMWZjODllNzc1ZWM0YzczODY2N2U1YmUxN2E1OTBiNmQ0MGZjIn0.xIeOGsGxVIvZqNt8chQ4sTI7HQHFnHgAk4yt5ybOZNg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"customer_name\": \"customer_name 1\",\n   \"fruit_data\": [\n       {\"fruit_id\": 10000001, \"quantity\": 1},\n       {\"fruit_id\": 10000002, \"quantity\": 2},\n       {\"fruit_id\": 10000003, \"quantity\": 3}\n   ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{admin_domain}}/invoice/store",
+							"host": [
+								"{{admin_domain}}"
+							],
+							"path": [
+								"invoice",
+								"store"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE2OTE3NDg1ODQsImV4cCI6MTY5MTc1MjE4NCwibmJmIjoxNjkxNzQ4NTg0LCJqdGkiOiJPUFl0TUZOTG9NNFFDZU5uIiwic3ViIjoiMTAwMDAwMDEiLCJwcnYiOiJjOGVlMWZjODllNzc1ZWM0YzczODY2N2U1YmUxN2E1OTBiNmQ0MGZjIn0.fyNpD_dUMFdinJQNKViQF91tozlEYths86ydLrASgb8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 10000050\n    ,\"product_name\": \"Zoie Christiansen V 222\"   \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{admin_domain}}/product/update",
+							"host": [
+								"{{admin_domain}}"
+							],
+							"path": [
+								"product",
+								"update"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE2OTE3NDg1ODQsImV4cCI6MTY5MTc1MjE4NCwibmJmIjoxNjkxNzQ4NTg0LCJqdGkiOiJPUFl0TUZOTG9NNFFDZU5uIiwic3ViIjoiMTAwMDAwMDEiLCJwcnYiOiJjOGVlMWZjODllNzc1ZWM0YzczODY2N2U1YmUxN2E1OTBiNmQ0MGZjIn0.fyNpD_dUMFdinJQNKViQF91tozlEYths86ydLrASgb8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": [10000051, 10000055,10000054]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{admin_domain}}/product/destroy",
+							"host": [
+								"{{admin_domain}}"
+							],
+							"path": [
+								"product",
+								"destroy"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
